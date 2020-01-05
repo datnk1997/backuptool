@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <title>Backup Tool</title>
+</head>
+
+<body>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="backup-tab" data-toggle="tab" role="tab" aria-selected="true">Backup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="restore-tab" data-toggle="tab" role="tab" aria-selected="false">Restore</a>
+      </li>
+  
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="backup" role="tabpanel" aria-labelledby="home-tab">
+        <div class="container">
+          <h1>Backup Database</h1>
+          <div class="row">
+            <div class="col-3">DB Name</div>
+            <div class="col-6"><input type="text" id="dbname" value="" /></div>
+          </div>
+          <div class="row">
+            <div class="col-3">Host</div>
+            <div class="col"><input type="text" id="host" /></div>
+          </div>
+          <div class="row">
+            <div class="col-3">Port</div>
+            <div class="col"><input type="text" id="port" /></div>
+          </div>
+          <div class="row">
+            <div class="col-3">User</div>
+            <div class="col"><input type="text" id="user" /></div>
+          </div>
+          <div class="row">
+            <div class="col-3">Password</div>
+            <div class="col"><input type="password" id="dbpassword" /></div>
+          </div>
+          <br>
+          <div>
+            <button id="backup-path">URL Save File</button>
+            <button id="backup-file">Backup</button>
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="restore" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="container">
+          <h1>Restore Database</h1>
+          <div>
+            <div class="row">
+              <div class="col-3">DB Name</div>
+              <div class="col-6"><input type="text" id="rs-dbname" /></div>
+            </div>
+            <div class="row">
+              <div class="col-3">Host</div>
+              <div class="col"><input type="text" id="rs-host" /></div>
+            </div>
+            <div class="row">
+              <div class="col-3">User</div>
+              <div class="col"><input type="text" id="rs-dbuser" /></div>
+            </div>
+            <div class="row">
+              <div class="col-3">Password</div>
+              <div class="col"><input type="text" id="rs-dbpassword" /></div>
+            </div>
+            <br>
+            <div>
+              <button id="restore-file">Choose File</button>
+              <button id="restore-btn">Restore</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+  
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+</body>
+
+</html>
