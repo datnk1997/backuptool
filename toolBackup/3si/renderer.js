@@ -78,7 +78,7 @@ document.getElementById('restore-btn').addEventListener('click', () => {
         console.log(rsBat)
         var data = [
         "@ECHO OFF "+"\r\n"+
-        "SET PGPASSWORD="+ dbPassword + "\r\n" + "pg_restore -h " + dbHost + " -U " + dbUser + " -d " + dbName +" " + restorePath + "\r\n" +
+        "SET PGPASSWORD="+ dbPassword + "\r\n" + "pg_restore -h " + dbHost + " -U " + dbUser + " -d " + dbName +" --role postgres -c " + restorePath + "\r\n" +
         "if %ERRORLEVEL% GEQ 1 echo restoreError" + "\r\n" +
         "if %ERRORLEVEL% EQU 0 echo restoreSuccess"
         ]
